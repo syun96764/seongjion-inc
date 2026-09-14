@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#07111f">
+  <title>성지온 주식회사 — 세계 냄새 확산 전략</title>
+  <link rel="stylesheet" href="https://pyscript.net/releases/2025.7.3/core.css">
+  <script type="module" src="https://pyscript.net/releases/2025.7.3/core.js"></script>
+  <style>
+    :root{--bg:#050b13;--panel:#0c1724;--line:#203348;--text:#eef7ff;--muted:#8ea4b8;--cyan:#55e6c1;--lime:#c9f15b;--red:#ff637a;--amber:#ffbd59;--blue:#4ea5ff}
+    *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:radial-gradient(circle at 50% 0,#102641 0,var(--bg) 52%);color:var(--text);font-family:Inter,Pretendard,"Noto Sans KR",system-ui,sans-serif}
+    button,select{font:inherit}button{cursor:pointer}.shell{max-width:1500px;margin:auto;padding:20px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:12px 4px 22px}.brand{display:flex;align-items:center;gap:13px}.logo{width:44px;height:44px;border:1px solid #55e6c166;border-radius:13px;display:grid;place-items:center;background:#55e6c112;box-shadow:0 0 35px #55e6c119;font-size:22px}.eyebrow{font-size:11px;letter-spacing:.19em;color:var(--cyan);font-weight:800}.brand h1{font-size:22px;margin:2px 0 0;letter-spacing:-.04em}.top-actions{display:flex;gap:8px}.ghost,.speed{color:var(--muted);border:1px solid var(--line);background:#0b1723;border-radius:10px;padding:9px 13px}.speed.active{color:#05120e;background:var(--cyan);border-color:var(--cyan);font-weight:800}
+    .layout{display:grid;grid-template-columns:280px minmax(500px,1fr) 310px;gap:14px}.panel{background:linear-gradient(145deg,#0d1927ee,#09131fee);border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 60px #0006;overflow:hidden}.panel-title{padding:17px 18px 12px;font-size:12px;letter-spacing:.13em;color:var(--muted);font-weight:800}.stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 14px 14px}.stat{border:1px solid #1a2d40;background:#07111c;padding:12px;border-radius:12px}.stat b{display:block;font-size:20px;margin-top:4px}.stat span{font-size:10px;color:var(--muted);letter-spacing:.08em}.cyan{color:var(--cyan)}.red{color:var(--red)}.amber{color:var(--amber)}.meter{height:7px;background:#152434;border-radius:10px;margin-top:8px;overflow:hidden}.meter i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--lime));transition:width .4s}.meter.danger i{background:linear-gradient(90deg,var(--amber),var(--red))}
+    .mission{padding:14px;border-top:1px solid var(--line)}.mission p{font-size:12px;color:var(--muted);line-height:1.6;margin:0}.mission strong{color:var(--text)}.upgrades{padding:0 12px 14px;display:grid;gap:8px}.upgrade{width:100%;text-align:left;padding:12px;border-radius:12px;border:1px solid #1d3348;background:#0a1622;color:var(--text);transition:.18s}.upgrade:hover:not(:disabled){border-color:var(--cyan);transform:translateY(-1px)}.upgrade:disabled{opacity:.38;cursor:not-allowed}.upgrade .row{display:flex;justify-content:space-between;gap:8px}.upgrade b{font-size:13px}.upgrade em{font-style:normal;color:var(--lime);font-weight:800}.upgrade small{display:block;color:var(--muted);margin-top:5px;line-height:1.4}.level{color:var(--cyan);font-size:10px}
+    .world{position:relative;min-height:620px;background:radial-gradient(ellipse at center,#0d2a40 0,#07121e 70%)}.world:before{content:"";position:absolute;inset:0;background-image:linear-gradient(#4ea5ff09 1px,transparent 1px),linear-gradient(90deg,#4ea5ff09 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(to bottom,#000,transparent)}.map-head{position:relative;display:flex;justify-content:space-between;align-items:center;padding:16px 18px;border-bottom:1px solid var(--line);z-index:2}.date{font-variant-numeric:tabular-nums;font-weight:800}.map{position:relative;min-height:520px;margin:12px}.routes{position:absolute;inset:0;width:100%;height:100%;opacity:.26}.routes line{stroke:#63aed1;stroke-width:.3;stroke-dasharray:2 2}.region{position:absolute;transform:translate(-50%,-50%);width:88px;text-align:center;background:#0c1a29dd;color:var(--text);border:1px solid #29425a;border-radius:40px;padding:9px 8px;transition:.3s;z-index:2}.region:hover{border-color:#7cb9e8;z-index:4}.region.infected{border-color:var(--cyan);box-shadow:0 0 24px #55e6c126}.region.hot{background:#18372e;border-color:var(--lime);box-shadow:0 0 32px #c9f15b38}.region b{display:block;font-size:11px}.region small{color:var(--muted);font-size:9px}.region .fill{position:absolute;inset:auto 4px 4px;height:3px;border-radius:4px;overflow:hidden;background:#193046}.region .fill i{display:block;height:100%;background:var(--cyan);width:0}.map-caption{position:absolute;left:18px;bottom:14px;color:#6e8aa1;font-size:10px}.event-dot{position:absolute;z-index:8;width:30px;height:30px;border:0;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,var(--lime) 20%,#73a900 72%);box-shadow:0 0 0 5px #c9f15b22,0 0 35px #c9f15b;animation:pulse 1s infinite;color:#162000;font-weight:900}@keyframes pulse{50%{transform:scale(1.14)}}
+    .feed{height:224px;overflow:auto;padding:0 14px 14px}.news{padding:10px 0;border-bottom:1px solid #182b3c;font-size:11px;line-height:1.45}.news time{display:block;color:var(--cyan);font-size:9px;margin-bottom:2px}.regional{padding:0 14px 16px}.regional-row{display:grid;grid-template-columns:72px 1fr 36px;gap:8px;align-items:center;font-size:10px;margin:8px 0}.bar{height:5px;border-radius:5px;background:#172739;overflow:hidden}.bar i{height:100%;display:block;background:var(--cyan)}.overlay{position:fixed;inset:0;background:#02070ddd;backdrop-filter:blur(10px);display:grid;place-items:center;z-index:50;padding:20px}.modal{max-width:560px;width:100%;background:#0b1724;border:1px solid #29425a;border-radius:22px;padding:28px;box-shadow:0 30px 100px #000}.modal h2{font-size:34px;letter-spacing:-.06em;margin:0 0 8px}.modal p{color:var(--muted);line-height:1.7;font-size:13px}.choices{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:20px 0}.choice{border:1px solid var(--line);background:#08131e;color:var(--text);border-radius:12px;padding:12px 8px}.choice.selected{border-color:var(--cyan);background:#55e6c112}.primary{width:100%;border:0;border-radius:12px;background:linear-gradient(90deg,var(--cyan),var(--lime));color:#06130f;font-weight:900;padding:14px}.disclaimer{font-size:10px!important;border-top:1px solid var(--line);padding-top:14px;margin-top:20px}.hidden{display:none!important}.loading{position:fixed;right:16px;bottom:16px;background:#07111f;border:1px solid var(--line);border-radius:10px;padding:9px 12px;color:var(--muted);font-size:11px;z-index:60}
+    @media(max-width:1050px){.layout{grid-template-columns:240px 1fr}.right{grid-column:1/-1}.world{min-height:570px}.feed{height:150px}}@media(max-width:720px){.shell{padding:10px}.layout{display:flex;flex-direction:column}.world{min-height:500px;order:-1}.map{min-height:430px}.region{width:68px;padding:7px 4px}.region b{font-size:9px}.choices{grid-template-columns:1fr}.topbar{align-items:flex-start}.top-actions{flex-wrap:wrap;justify-content:flex-end}}
+  </style>
+</head>
+<body>
+<div id="loading" class="loading">PYTHON 엔진 불러오는 중…</div>
+<div class="shell">
+  <header class="topbar">
+    <div class="brand"><div class="logo">〰</div><div><div class="eyebrow">GLOBAL ODOR NETWORK</div><h1>성지온 주식회사</h1></div></div>
+    <div class="top-actions"><button class="speed" data-speed="0">Ⅱ</button><button class="speed active" data-speed="1">×1</button><button class="speed" data-speed="2">×2</button><button class="speed" data-speed="4">×4</button><button id="reset" class="ghost">새 게임</button></div>
+  </header>
+  <main class="layout">
+    <aside class="panel">
+      <div class="panel-title">세계 현황</div>
+      <div class="stats">
+        <div class="stat"><span>냄새 포인트</span><b id="points" class="cyan">0</b></div>
+        <div class="stat"><span>진행 일수</span><b id="days">0</b></div>
+        <div class="stat"><span>세계 점유율</span><b id="coverage">0%</b><div class="meter"><i id="coverage-bar"></i></div></div>
+        <div class="stat"><span>세계 대응</span><b id="response" class="red">0%</b><div class="meter danger"><i id="response-bar"></i></div></div>
+      </div>
+      <div class="mission"><p><strong>임무</strong><br>세계 대응이 완성되기 전에 모든 지역에 냄새를 퍼뜨려라. 지도에 나타나는 냄새 포인트를 눌러 업그레이드 자원을 얻는다.</p></div>
+      <div class="panel-title">연구 개발</div>
+      <div id="upgrades" class="upgrades"></div>
+    </aside>
+    <section class="panel world">
+      <div class="map-head"><div><span class="eyebrow">실시간 확산 지도</span></div><div id="date" class="date">2026.09.14</div></div>
+      <div id="map" class="map">
+        <svg class="routes" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <line x1="16" y1="30" x2="31" y2="68"/><line x1="16" y1="30" x2="48" y2="28"/><line x1="48" y1="28" x2="56" y2="55"/><line x1="56" y1="55" x2="76" y2="35"/><line x1="76" y1="35" x2="89" y2="72"/><line x1="31" y1="68" x2="56" y2="55"/><line x1="48" y1="28" x2="76" y2="35"/>
+        </svg>
+        <div class="map-caption">지도는 게임용으로 단순화된 네트워크 시각화다.</div>
+      </div>
+    </section>
+    <aside class="panel right">
+      <div class="panel-title">지역별 냄새 농도</div><div id="regional" class="regional"></div>
+      <div class="panel-title">상황실 속보</div><div id="feed" class="feed"></div>
+    </aside>
+  </main>
+</div>
+<div id="start-overlay" class="overlay">
+  <div class="modal">
+    <div class="eyebrow">A PYTHON STRATEGY SIMULATION</div>
+    <h2>냄새의 시작점을 선택하라</h2>
+    <p>성지온 주식회사의 첫 냄새 관측 지역을 정한다. 지역마다 인구와 연결성이 달라 초반 전략이 달라진다.</p>
+    <div id="choices" class="choices"></div>
+    <button id="start" class="primary">프로젝트 시작</button>
+    <p class="disclaimer">이 게임은 당사자의 허락을 받아 만든 허구의 코미디 패러디다. 실제 인물에 관한 사실이나 평가를 뜻하지 않는다.</p>
+  </div>
+</div>
+<div id="end-overlay" class="overlay hidden"><div class="modal"><div id="end-kicker" class="eyebrow"></div><h2 id="end-title"></h2><p id="end-copy"></p><button id="again" class="primary">다시 시작</button></div></div>
+<script type="py" src="./main.py"></script>
+</body>
+</html>
